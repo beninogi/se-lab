@@ -14,8 +14,11 @@ public class TorpedoStore {
 
   private int torpedoCount = 0;
 
-  private Random generator = new Random();
-
+  //The random variable has to be a member of the class,
+  //otherwise it will be re-seeded on each invocation
+  //and will always return the same value.
+  
+  private Random generator = new Random(); 
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
 
